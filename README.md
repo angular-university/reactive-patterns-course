@@ -24,7 +24,7 @@ If you are looking for the Angular 2 and Firebase - Build a Web Application Cour
 
 [Github repo for this course](https://github.com/angular-university/angular-firebase-app)
 
-![Angular firebase course](https://angular-academy.s3.amazonaws.com/thumbnails/angular_app-firebase-small.jpg)
+![Angular firebase course](https://angular-academy.s3.amazonaws.com/thumbnails/angular_app-firebase-small-v2.png)
 
 
 # Complete Typescript 2 Course - Build A REST API
