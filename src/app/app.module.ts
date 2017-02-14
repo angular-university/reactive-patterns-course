@@ -4,12 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { GofExperimentsComponent } from './gof-experiments/gof-experiments.component';
+import {BrowserEventExperimentsComponent} from "./browser-event-experiments/browser-event-experiments.component";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    GofExperimentsComponent
+    AppComponent, BrowserEventExperimentsComponent
   ],
   imports: [
     BrowserModule,

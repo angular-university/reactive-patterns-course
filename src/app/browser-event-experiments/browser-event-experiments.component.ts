@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 
 @Component({
-    selector: 'gof-experiments',
-    templateUrl: './gof-experiments.component.html',
-    styleUrls: ['./gof-experiments.component.css']
+    selector: 'browser-event-experiments',
+    templateUrl: './browser-event-experiments.component.html',
+    styleUrls: ['./browser-event-experiments.component.css']
 })
-export class GofExperimentsComponent implements OnInit {
+export class BrowserEventExperimentsComponent implements OnInit {
 
 
     hoverSection: HTMLElement;
