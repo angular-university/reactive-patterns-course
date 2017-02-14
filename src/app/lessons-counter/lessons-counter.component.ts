@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LessonsCounterComponent implements OnInit {
 
+    totalLessons = 30;
+
   constructor() { }
 
   ngOnInit() {
