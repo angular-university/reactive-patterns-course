@@ -13,11 +13,13 @@ export class CustomEventExperimentsComponent implements OnInit {
    myLessons: Lesson[] = [
        {
            id: 1,
-           description: 'TEST 1'
+           description: 'TEST 1',
+           duration: '5:00'
        },
        {
            id: 1,
-           description: 'TEST 2'
+           description: 'TEST 2',
+           duration: '10:30'
        }
    ];
 
