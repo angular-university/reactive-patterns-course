@@ -25,9 +25,7 @@ class EventBus implements Subject {
     }
 
     unregisterObserver(eventType:string, obs: Observer) {
-        const newObservers = _.remove(
-            this.observersPerEventType(eventType), el => el === obs );
-        this.observers[eventType] = newObservers;
+        _.remove(this.observersPerEventType(eventType), el => el === obs );
     }
 
     notifyObservers(eventType:string, data: any) {

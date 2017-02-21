@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {globalEventBus, Observer, LESSONS_LIST_AVAILABLE, ADD_NEW_LESSON} from "../event-bus-experiments/event-bus";
 import {Lesson} from "../shared/model/lesson";
+import * as _ from 'lodash';
 
 @Component({
     selector: 'lessons-list',
@@ -27,12 +28,17 @@ export class LessonsListComponent implements Observer {
 
     notify(data: Lesson[]) {
         console.log('Lessons list component received data ..');
-        this.lessons = data;
+        this.lessons = data.slice(0);
     }
 
     toggleLessonViewed(lesson:Lesson) {
         console.log('toggling lesson ...');
         lesson.completed = !lesson.completed;
+    }
+
+    delete(deleted:Lesson) {
+        _.remove(this.lessons,
+            lesson => lesson.id === deleted.id )
     }
 
 

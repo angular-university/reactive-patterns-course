@@ -18,6 +18,7 @@ export class LessonsCounterComponent  {
         globalEventBus.registerObserver(ADD_NEW_LESSON, {
             notify: lessonText => this.lessonsCounter += 1
         } );
+
     }
 
     notify(data: Lesson[]) {

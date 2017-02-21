@@ -8,8 +8,8 @@
             {{ lesson.description }}
         </td>
         <td class="duration">
-            <i class="md-icon duration-icon">access_time</i>
-            <span>{{lesson.duration}}</span>
+            <button class="button button-highlight"
+                    (click)="delete(lesson)">X</button>
         </td>
     </tr>
     </tbody>
