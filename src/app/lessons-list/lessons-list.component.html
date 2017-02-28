@@ -2,7 +2,7 @@
     <tbody>
     <tr *ngFor="let lesson of lessons">
         <td class="viewed">
-            <input type="checkbox" (click)="toggleLessonViewed(lesson)">
+            <input [checked]="lesson.completed" type="checkbox" (click)="toggleLessonViewed(lesson)">
         </td>
         <td class="lesson-title" [ngClass]="{'lesson-viewed':lesson.completed}">
             {{ lesson.description }}

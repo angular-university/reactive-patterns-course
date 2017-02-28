@@ -10,25 +10,24 @@ import {Observer, store} from "../event-bus-experiments/app-data";
 })
 export class LessonsListComponent implements Observer, OnInit {
 
-    lessons: Lesson[] =[];
+    lessons: Lesson[] = [];
 
     ngOnInit() {
-        store.lessonsList$.subscribe(this);
+        store.subscribe(this);
     }
 
     next(data: Lesson[]) {
         console.log('Lessons list component received data ..');
-        this.lessons = data.slice(0);
+        this.lessons = data;
     }
 
     toggleLessonViewed(lesson:Lesson) {
         console.log('toggling lesson ...');
-        lesson.completed = !lesson.completed;
+        store.toggleLessonViewed(lesson);
     }
 
     delete(deleted:Lesson) {
-        _.remove(this.lessons,
-            lesson => lesson.id === deleted.id )
+        store.deleteLesson(deleted);
     }
 
 
