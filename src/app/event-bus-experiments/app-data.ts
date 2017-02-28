@@ -38,22 +38,21 @@ class SubjectImplementation implements Subject {
 }
 
 
-class DataStore implements Observable {
+class DataStore {
 
     private lessons : Lesson[]  = [];
 
     private lessonsListSubject = new SubjectImplementation();
 
+    public lessonsList$: Observable = {
 
-    subscribe(obs: Observer) {
-        this.lessonsListSubject.subscribe(obs);
-        obs.next(this.lessons);
-    }
+        subscribe: obs => {
+            this.lessonsListSubject.subscribe(obs);
+            obs.next(this.lessons);
+        },
 
-    unsubscribe(obs: Observer) {
-        this.lessonsListSubject.unsubscribe(obs)
-    }
-
+        unsubscribe: obs => this.lessonsListSubject.unsubscribe(obs)
+    };
 
     initializeLessonsList(newList: Lesson[]) {
         this.lessons = _.cloneDeep(newList);
@@ -76,6 +75,8 @@ class DataStore implements Observable {
 
         lesson.completed = ! lesson.completed;
         this.broadcast();
+
+
     }
 
     broadcast() {
