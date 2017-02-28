@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {globalEventBus, LESSONS_LIST_AVAILABLE, ADD_NEW_LESSON} from "./event-bus";
+import {globalEventBus, LESSONS_LIST_AVAILABLE, ADD_NEW_LESSON} from "./app-data";
 import {testLessons} from "../shared/model/test-lessons";
 import {Lesson} from "../shared/model/lesson";
 
@@ -18,7 +18,7 @@ export class EventBusExperimentsComponent implements OnInit {
 
         this.lessons = testLessons.slice(0);
 
-        globalEventBus.notifyObservers(LESSONS_LIST_AVAILABLE,
+        globalEventBus.next(LESSONS_LIST_AVAILABLE,
             this.lessons);
 
         setTimeout(() => {
@@ -28,14 +28,14 @@ export class EventBusExperimentsComponent implements OnInit {
                 description: 'New lesson arriving from the backend'
             });
 
-            globalEventBus.notifyObservers(LESSONS_LIST_AVAILABLE, this.lessons);
+            globalEventBus.next(LESSONS_LIST_AVAILABLE, this.lessons);
 
         }, 10000);
 
     }
 
     addLesson(lessonText: string) {
-        globalEventBus.notifyObservers(ADD_NEW_LESSON, lessonText);
+        globalEventBus.next(ADD_NEW_LESSON, lessonText);
     }
 
 }
