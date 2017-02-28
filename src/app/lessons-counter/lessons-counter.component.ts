@@ -9,9 +9,6 @@ import {Observer, store} from "../event-bus-experiments/app-data";
 })
 export class LessonsCounterComponent implements Observer, OnInit {
 
-
-
-
     lessonsCounter = 0;
 
     ngOnInit() {
