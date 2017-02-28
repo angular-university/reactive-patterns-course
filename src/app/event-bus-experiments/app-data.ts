@@ -40,7 +40,7 @@ class SubjectImplementation implements Subject {
 }
 
 
-
+export let lessonsList$: Observable;
 
 
 
