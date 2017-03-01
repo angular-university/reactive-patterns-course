@@ -18,16 +18,12 @@ export class BrowserEventExperimentsComponent implements OnInit {
 
       const mouseMove$ = Observable.fromEvent(this.hoverSection, 'mousemove');
 
-      this.sub =  mouseMove$.subscribe(
-          ev => console.log("mousemove", ev)
-      );
-
-
       const click$ = Observable.fromEvent(this.hoverSection, 'click');
 
-      click$.subscribe(
-          ev => console.log("click", ev)
-      );
+      const combined$  = click$.withLatestFrom(mouseMove$)
+            .map(events => events[1]);
+
+      combined$.subscribe(console.log);
 
   }
 
