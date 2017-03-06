@@ -20,11 +20,13 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit() {
+
     return this.db.list('courses')
         .do(console.log)
         .subscribe(
             data => this.courses = data
         );
+
   }
 
 
