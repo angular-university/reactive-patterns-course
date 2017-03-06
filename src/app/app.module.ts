@@ -12,6 +12,7 @@ import {firebaseConfig} from "../environments/firebase.config";
 import {AngularFireModule} from 'angularfire2';
 import {RouterModule} from '@angular/router';
 import {routerConfig} from "./router.config";
+import { CourseDetailComponent } from './course-detail/course-detail.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {routerConfig} from "./router.config";
     EventBusExperimentsComponent,
     LessonsListComponent,
     LessonsCounterComponent,
-    HomeComponent
+    HomeComponent,
+    CourseDetailComponent
   ],
   imports: [
     BrowserModule,

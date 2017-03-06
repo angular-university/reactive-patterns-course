@@ -13,7 +13,7 @@
                 {{course.description}}
             </td>
             <td>
-                <button class="button button-primary">View</button>
+                <button class="button button-primary" [routerLink]="['course',course.url]">View</button>
             </td>
         </tr>
     </table>
