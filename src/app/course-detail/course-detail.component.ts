@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {AngularFireDatabase} from 'angularfire2';
-
+import {ActivatedRoute} from '@angular/router';
+import {Course} from "../shared/model/course";
+import {Lesson} from "../shared/model/lesson";
+import * as _ from 'lodash';
 
 
 @Component({
@@ -10,12 +13,43 @@ import {AngularFireDatabase} from 'angularfire2';
 })
 export class CourseDetailComponent implements OnInit {
 
-  constructor(private db: AngularFireDatabase) {
+  course: Course;
+  lessons: Lesson[];
 
+  constructor(private route: ActivatedRoute, private db: AngularFireDatabase) {
+
+
+      route.params
+          .subscribe( params => {
+
+              const courseUrl = params['id'];
+
+              this.db.list('courses', {
+                  query: {
+                      orderByChild: 'url',
+                      equalTo: courseUrl
+                  }
+              })
+              .map( data => data[0])
+              .subscribe(data => {
+                  this.course = data;
+
+                  this.db.list(`lessonsPerCourse/${this.course.id}`)
+                      .switchMap(lessonsPerCourse => this.db.list('lessons', {
+                          query: {
+                              startAt: lessonsPerCourse[0],
+                              endAt: _.last(lessonsPerCourse)
+                          }
+                      }))
+                      .subscribe(lessons => this.lessons = lessons);
+              });
+
+          });
 
   }
 
   ngOnInit() {
+
   }
 
 }
