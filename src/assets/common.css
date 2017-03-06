@@ -17,6 +17,11 @@
     min-width: 350px;
 }
 
+.screen-container h2 {
+    max-width: 300px;
+    margin: 30px auto;
+}
+
 .courses-list tr {
     height: 35px;
     line-height: 35px;
