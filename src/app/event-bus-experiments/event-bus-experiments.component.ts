@@ -14,11 +14,11 @@ export class EventBusExperimentsComponent implements OnInit {
 
         console.log('Top level component broadcasted all lessons ...');
 
-        store.initializeLessonsList(testLessons.slice(0));
+        store.initializeLessonsList(<any>testLessons.slice(0));
 
         setTimeout(() => {
 
-            const newLesson = {
+            const newLesson:any = {
                 id: Math.random(),
                 description: 'New lesson arriving from the backend'
             };
@@ -30,7 +30,7 @@ export class EventBusExperimentsComponent implements OnInit {
     }
 
     addLesson(lessonText: string) {
-        const newLesson = {
+        const newLesson:any = {
             id: Math.random(),
             description: lessonText
         };
