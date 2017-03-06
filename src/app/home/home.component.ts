@@ -27,4 +27,9 @@ export class HomeComponent implements OnInit {
         );
   }
 
+
+    changeCourseData() {
+      this.courses.forEach(course => course.description  = '=>' + course.description  );
+    }
+
 }

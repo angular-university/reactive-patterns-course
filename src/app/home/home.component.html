@@ -13,11 +13,13 @@
                 {{course.description}}
             </td>
             <td>
-                <button class="button button-highlight">Take  Course</button>
+                <button class="button button-primary">View</button>
             </td>
         </tr>
     </table>
 
     <div *ngIf="! courses">Loading ...</div>
+
+    <button class="button button-highlight" (click)="changeCourseData()">Mutate Local Data</button>
 
 </div>
