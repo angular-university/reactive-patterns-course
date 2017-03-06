@@ -15,20 +15,16 @@ export class HomeComponent implements OnInit {
 
   constructor(private db: AngularFireDatabase) {
 
-
   }
 
 
   ngOnInit() {
 
-    return this.db.list('courses')
+     this.db.list('courses')
         .do(console.log)
         .subscribe(
             data => this.courses = data
         );
-
   }
-
-
 
 }

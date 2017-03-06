@@ -3,7 +3,7 @@
 
     <h2>Stateless Observable Services</h2>
 
-    <table class="courses-list card card-strong">
+    <table class="courses-list card card-strong" *ngIf="courses">
         <tr class="course-summary" *ngFor="let course of courses">
             <td>
                 <img class="lesson-logo"
@@ -17,5 +17,7 @@
             </td>
         </tr>
     </table>
+
+    <div *ngIf="! courses">Loading ...</div>
 
 </div>
