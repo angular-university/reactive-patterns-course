@@ -1,12 +1,9 @@
 
-
 .course-container, .screen-container {
     max-width: 500px;
     margin: 0 auto;
     text-align: center;
 }
-
-
 
 .hover-me {
     border: 1px solid black;
@@ -14,3 +11,20 @@
     height: 200px;
     margin: 0 auto 30px auto;
 }
+
+.courses-list {
+    margin: 0 auto;
+    min-width: 350px;
+}
+
+.courses-list tr {
+    height: 35px;
+    line-height: 35px;
+}
+
+.courses-list button {
+    font-size: 16px;
+    line-height: 16px;
+}
+
+
