@@ -10,6 +10,8 @@ import { LessonsCounterComponent } from './lessons-counter/lessons-counter.compo
 import { HomeComponent } from './home/home.component';
 import {firebaseConfig} from "../environments/firebase.config";
 import {AngularFireModule} from 'angularfire2';
+import {RouterModule} from '@angular/router';
+import {routerConfig} from "./router.config";
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import {AngularFireModule} from 'angularfire2';
     FormsModule,
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
+    RouterModule.forRoot(routerConfig),
   ],
   providers: [],
   bootstrap: [AppComponent]
