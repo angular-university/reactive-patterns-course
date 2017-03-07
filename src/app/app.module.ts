@@ -13,6 +13,7 @@ import {AngularFireModule} from 'angularfire2';
 import {RouterModule} from '@angular/router';
 import {routerConfig} from "./router.config";
 import { CourseDetailComponent } from './course-detail/course-detail.component';
+import {CoursesService} from "./services/courses.service";
 
 @NgModule({
   declarations: [
@@ -31,7 +32,15 @@ import { CourseDetailComponent } from './course-detail/course-detail.component';
     AngularFireModule.initializeApp(firebaseConfig),
     RouterModule.forRoot(routerConfig),
   ],
-  providers: [],
+  providers: [
+      CoursesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+
+
+
+
