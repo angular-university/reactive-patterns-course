@@ -18,6 +18,11 @@ export class HomeComponent implements OnInit {
 
     }
 
+    changeCourseData() {
+        this.courses.forEach(course =>
+            course.description = '=>' + course.description);
+    }
+
     ngOnInit() {
 
         this.db.list('courses')
@@ -26,16 +31,25 @@ export class HomeComponent implements OnInit {
                 data => this.courses = data
             );
 
+
         this.db.list('lessons', {
             query: {
                 orderByKey: true,
                 limitToLast: 10
             }
         })
-            .do(console.log)
-            .subscribe(
-                data => this.latestLessons = data
-            );
+        .do(console.log)
+        .subscribe(
+            data => this.latestLessons = data
+        );
     }
 
 }
+
+
+
+
+
+
+
+
