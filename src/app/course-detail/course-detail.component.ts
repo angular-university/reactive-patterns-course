@@ -34,13 +34,12 @@ export class CourseDetailComponent implements OnInit {
               .subscribe(data => {
                   this.course = data;
 
-                  this.db.list(`lessonsPerCourse/${this.course.id}`)
-                      .switchMap(lessonsPerCourse => this.db.list('lessons', {
+                  this.db.list('lessons', {
                           query: {
                               orderByChild: 'courseId',
                               equalTo: data.$key
                           }
-                      }))
+                      })
                       .subscribe(lessons => this.lessons = lessons);
               });
 
