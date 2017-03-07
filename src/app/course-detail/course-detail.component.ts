@@ -19,30 +19,17 @@ export class CourseDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private coursesService: CoursesService) {
 
-
       route.params
           .subscribe( params => {
 
               const courseUrl = params['id'];
 
-              this.db.list('courses', {
-                  query: {
-                      orderByChild: 'url',
-                      equalTo: courseUrl
-                  }
-              })
-              .map( data => data[0])
+              this.coursesService.findCourseByUrl(courseUrl)
               .subscribe(data => {
                   this.course = data;
 
-                  this.db.list(`lessonsPerCourse/${this.course.id}`)
-                      .switchMap(lessonsPerCourse => this.db.list('lessons', {
-                          query: {
-                              orderByChild: 'courseId',
-                              equalTo: data.$key
-                          }
-                      }))
-                      .subscribe(lessons => this.lessons = lessons);
+                  this.coursesService.findLessonsForCourse(this.course.id)
+                    .subscribe(lessons => this.lessons = lessons);
               });
 
           });

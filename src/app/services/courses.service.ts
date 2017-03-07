@@ -13,6 +13,7 @@ export class CoursesService {
 
   findAllCourses(): Observable<Course[]> {
       return this.db.list('courses')
+          .first()
           .do(console.log);
   }
 
@@ -23,9 +24,41 @@ export class CoursesService {
               limitToLast: 10
           }
       })
+      .first()
       .do(console.log);
   }
 
+  findCourseByUrl(courseUrl:string): Observable<Course> {
+      return this.db.list('courses', {
+          query: {
+              orderByChild: 'url',
+              equalTo: courseUrl
+          }
+      })
+      .first()
+      .map( data => data[0]);
+
+  }
+
+  findLessonsForCourse(courseId:string): Observable<Lesson[]> {
+      return this.db.list('lessons', {
+          query: {
+              orderByChild: 'courseId',
+              equalTo: courseId
+          }
+      })
+      .first();
+  }
+
+
 }
+
+
+
+
+
+
+
+
 
 
