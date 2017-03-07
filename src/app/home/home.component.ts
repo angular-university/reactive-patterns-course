@@ -24,6 +24,8 @@ export class HomeComponent implements OnInit {
 
         this.latestLessons$ = this.coursesService.findLatestLessons();
 
+
+
     }
 
 }
