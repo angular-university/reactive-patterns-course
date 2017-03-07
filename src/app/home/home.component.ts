@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Course} from "../shared/model/course";
 import {Lesson} from "../shared/model/lesson";
 import {CoursesService} from "../services/courses.service";
-
+import {Observable} from 'rxjs';
 
 @Component({
     selector: 'home',
@@ -11,8 +11,8 @@ import {CoursesService} from "../services/courses.service";
 })
 export class HomeComponent implements OnInit {
 
-    courses: Course[];
-    latestLessons: Lesson[];
+    courses$: Observable<Course[]>;
+    latestLessons$: Observable<Lesson[]>;
 
     constructor(private coursesService: CoursesService) {
 
@@ -20,16 +20,9 @@ export class HomeComponent implements OnInit {
 
     ngOnInit() {
 
-        this.coursesService.findAllCourses()
-            .subscribe(
-                data => this.courses = data
-            );
+        this.courses$ =  this.coursesService.findAllCourses();
 
-        this.coursesService.findLatestLessons()
-            .subscribe(
-                data => this.latestLessons = data
-            );
-
+        this.latestLessons$ = this.coursesService.findLatestLessons();
 
     }
 
