@@ -16,8 +16,6 @@ export class LessonsListComponent {
 
 
 
-
-
 }
 
 
