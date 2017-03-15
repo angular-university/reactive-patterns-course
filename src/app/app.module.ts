@@ -19,6 +19,7 @@ import { CourseDetailHeaderComponent } from './course-detail-header/course-detai
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import {NewsletterService} from "./services/newsletter.service"; 
 import { TopMenuComponent } from './top-menu/top-menu.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { TopMenuComponent } from './top-menu/top-menu.component';
     CoursesListComponent,
     CourseDetailHeaderComponent,
     NewsletterComponent,
-    TopMenuComponent
+    TopMenuComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
