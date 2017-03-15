@@ -1,6 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import {UserService} from "../services/user.service";
-import {NewsletterService} from "../services/newsletter.service";
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
     selector: 'newsletter',
@@ -9,20 +7,16 @@ import {NewsletterService} from "../services/newsletter.service";
 })
 export class NewsletterComponent {
 
-    constructor(private userService: UserService,
-                private newsletterService: NewsletterService) {
+    @Input()
+    firstName:string;
 
+    @Output()
+    subscribe = new EventEmitter();
+
+    subscribeToNewsletter(emailField) {
+        this.subscribe.emit(emailField.value);
+        emailField.value = '';
     }
 
-    subscribe(emailField) {
-        this.newsletterService.subscribeToNewsletter(emailField.value)
-            .subscribe(
-                () => {
-                    alert('Subscription successful ...');
-                    emailField.value = '';
-                },
-                console.error
-            );
-    }
 
 }

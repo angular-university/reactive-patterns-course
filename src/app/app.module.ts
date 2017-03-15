@@ -17,8 +17,7 @@ import {CoursesService} from "./services/courses.service";
 import { CoursesListComponent } from './courses-list/courses-list.component';
 import { CourseDetailHeaderComponent } from './course-detail-header/course-detail-header.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
-import {NewsletterService} from "./services/newsletter.service";
-import {UserService} from "./services/user.service";
+import {NewsletterService} from "./services/newsletter.service"; 
 import { TopMenuComponent } from './top-menu/top-menu.component';
 
 @NgModule({
@@ -44,8 +43,7 @@ import { TopMenuComponent } from './top-menu/top-menu.component';
   ],
   providers: [
       CoursesService,
-      NewsletterService,
-      UserService
+      NewsletterService
   ],
   bootstrap: [AppComponent]
 })

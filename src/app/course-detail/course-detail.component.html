@@ -1,7 +1,8 @@
 
 <div class="screen-container">
 
-    <course-detail-header [course]="course" [lessons]="lessons"></course-detail-header>
+    <course-detail-header [course]="course" [lessons]="lessons"
+        firstName="LeBron" (subscribe)="onSubscribe($event)"></course-detail-header>
 
     <table class="table lessons-list card card-strong" *ngIf="lessons">
         <tbody>

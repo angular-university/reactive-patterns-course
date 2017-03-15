@@ -4,6 +4,7 @@ import {Course} from "../shared/model/course";
 import {Lesson} from "../shared/model/lesson";
 import * as _ from 'lodash';
 import {CoursesService} from "../services/courses.service";
+import {NewsletterService} from "../services/newsletter.service";
 
 
 @Component({
@@ -17,7 +18,8 @@ export class CourseDetailComponent implements OnInit {
   lessons: Lesson[];
 
   constructor(private route: ActivatedRoute,
-              private coursesService: CoursesService) {
+              private coursesService: CoursesService,
+              private newsletterService: NewsletterService) {
 
       route.params
           .subscribe( params => {
@@ -34,6 +36,16 @@ export class CourseDetailComponent implements OnInit {
 
           });
 
+  }
+
+  onSubscribe(email:string) {
+      this.newsletterService.subscribeToNewsletter(email)
+          .subscribe(
+              () => {
+                  alert('Subscription successful ...');
+              },
+              console.error
+          );
   }
 
   ngOnInit() {
