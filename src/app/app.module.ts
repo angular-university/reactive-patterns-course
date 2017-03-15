@@ -16,6 +16,9 @@ import { CourseDetailComponent } from './course-detail/course-detail.component';
 import {CoursesService} from "./services/courses.service";
 import { CoursesListComponent } from './courses-list/courses-list.component';
 import { CourseDetailHeaderComponent } from './course-detail-header/course-detail-header.component';
+import { NewsletterComponent } from './newsletter/newsletter.component';
+import {NewsletterService} from "./services/newsletter.service";
+import {UserService} from "./services/user.service";
 
 @NgModule({
   declarations: [
@@ -27,7 +30,8 @@ import { CourseDetailHeaderComponent } from './course-detail-header/course-detai
     HomeComponent,
     CourseDetailComponent,
     CoursesListComponent,
-    CourseDetailHeaderComponent
+    CourseDetailHeaderComponent,
+    NewsletterComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,9 @@ import { CourseDetailHeaderComponent } from './course-detail-header/course-detai
     RouterModule.forRoot(routerConfig),
   ],
   providers: [
-      CoursesService
+      CoursesService,
+      NewsletterService,
+      UserService
   ],
   bootstrap: [AppComponent]
 })
