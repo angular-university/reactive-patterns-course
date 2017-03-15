@@ -14,8 +14,15 @@ export class NewsletterComponent {
 
     }
 
-    subscribe(email:string) {
-        this.newsletterService.subscribeToNewsletter(email);
+    subscribe(emailField) {
+        this.newsletterService.subscribeToNewsletter(emailField.value)
+            .subscribe(
+                () => {
+                    alert('Subscription successful ...');
+                    emailField.value = '';
+                },
+                console.error
+            );
     }
 
 }

@@ -5,7 +5,8 @@
   "angular-cli": {},
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve  --proxy-config proxy.conf.json",
+    "rest-api": "./node_modules/.bin/ts-node ./src/server/server.ts",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -20,9 +21,12 @@
     "@angular/platform-browser": ">=4.0.0-beta <5.0.0",
     "@angular/platform-browser-dynamic": ">=4.0.0-beta <5.0.0",
     "@angular/router": ">=4.0.0-beta <5.0.0",
+    "@types/express": "^4.0.35",
     "@types/lodash": "^4.14.52",
     "angularfire2": "^2.0.0-beta.8",
+    "body-parser": "^1.17.1",
     "core-js": "^2.4.1",
+    "express": "^4.15.2",
     "firebase": "^3.7.0",
     "lodash": "^4.17.4",
     "rxjs": "^5.0.1",
@@ -43,7 +47,7 @@
     "karma-coverage-istanbul-reporter": "^0.2.0",
     "karma-jasmine": "^1.0.2",
     "protractor": "~5.1.0",
-    "ts-node": "1.2.1",
+    "ts-node": "^2.1.0",
     "tslint": "^4.3.0",
     "typescript": "~2.1.0"
   }

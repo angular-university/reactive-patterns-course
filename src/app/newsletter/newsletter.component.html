@@ -5,8 +5,8 @@
         enter your name below to subscribe:</h5>
 
     <form>
-        <input type="email" name="email" placeholder="Enter your Email">
-        <input #email type="button" class="button button-primary" value="Subscribe"
-               (click)="subscribe(email.value)">
+        <input #email type="email" name="email" placeholder="Enter your Email">
+        <input  type="button" class="button button-primary" value="Subscribe"
+               (click)="subscribe(email)">
     </form>
 </fieldset>
