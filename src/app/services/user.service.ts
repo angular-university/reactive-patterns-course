@@ -24,17 +24,17 @@ export class UserService {
     }
 
 
-    login(email:string, password:string) {
+    login(email:string, password:string): Observable<User> {
 
         const headers = new Headers();
         headers.append('Content-Type', 'application/json');
 
-        this.http.post('/api/login', {email,password}, headers)
+        return this.http.post('/api/login', {email,password}, headers)
             .map(res => res.json())
-            .subscribe(
-                user => this.subject.next(user),
-                () => alert('Login Failed')
-            );
+            .do(user => console.log(user))
+            .do(user => this.subject.next(user))
+            .publishLast().refCount();
+
     }
 
 
