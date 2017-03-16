@@ -12,17 +12,14 @@ export const UNKNOWN_USER : User = {
 @Injectable()
 export class UserService {
 
-
     private subject = new BehaviorSubject(UNKNOWN_USER);
 
     user$: Observable<User> = this.subject.asObservable();
-
 
     constructor(private http:Http) {
 
 
     }
-
 
     login(email:string, password:string): Observable<User> {
 
