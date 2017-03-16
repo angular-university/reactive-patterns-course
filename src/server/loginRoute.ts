@@ -1,6 +1,7 @@
 
 
 import {User} from "../app/shared/model/user";
+
 const auth = {
     'john@gmail.com': 'test123',
     'bill@gmail.com': 'test456'
