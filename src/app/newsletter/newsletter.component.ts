@@ -1,6 +1,7 @@
 import {Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy} from '@angular/core';
 import {NewsletterService} from "../services/newsletter.service";
 import {UserService} from "../services/user.service";
+import {Observable} from "rxjs";
 
 @Component({
     selector: 'newsletter',
@@ -10,7 +11,7 @@ import {UserService} from "../services/user.service";
 })
 export class NewsletterComponent implements OnInit {
 
-    firstName:string;
+    firstName$:Observable<string>;
 
     constructor(
         private userService:UserService,
@@ -19,9 +20,7 @@ export class NewsletterComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.userService.user$.subscribe(
-            user => this.firstName = user.firstName
-        );
+        this.firstName$ = this.userService.user$.map(user => user.firstName);
     }
 
     subscribeToNewsletter(emailField) {
