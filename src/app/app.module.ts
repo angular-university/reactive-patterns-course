@@ -20,6 +20,7 @@ import { NewsletterComponent } from './newsletter/newsletter.component';
 import {NewsletterService} from "./services/newsletter.service"; 
 import { TopMenuComponent } from './top-menu/top-menu.component';
 import { LoginComponent } from './login/login.component';
+import {UserService} from "./services/user.service";
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { LoginComponent } from './login/login.component';
   ],
   providers: [
       CoursesService,
-      NewsletterService
+      NewsletterService,
+      UserService
   ],
   bootstrap: [AppComponent]
 })

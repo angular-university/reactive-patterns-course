@@ -5,7 +5,7 @@
         enter your email below to subscribe:</h5>
 
     <form>
-        <input #email type="email" name="email" placeholder="Enter your Email">
+        <input #email type="email" name="email" placeholder="Enter your Email" autocomplete="off">
         <input  type="button" class="button button-primary" value="Subscribe"
                (click)="subscribeToNewsletter(email)">
     </form>
