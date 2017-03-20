@@ -1,14 +1,15 @@
 import {Component, OnInit, Input} from '@angular/core';
-import {CourseMdService} from "../services/course-md.service";
-import {Course} from "../shared/model/course";
+import {LessonsPager} from "../services/course-md.service";
 import {Observable} from "rxjs";
 import {Lesson} from "../shared/model/lesson";
+import {CoursesHttpService} from "../services/courses-http.service";
+import {Course} from "../shared/model/course";
 
 @Component({
     selector: 'course',
     templateUrl: './course.component.html',
     styleUrls: ['./course.component.css'],
-    providers: [CourseMdService]
+    providers: [LessonsPager]
 })
 export class CourseComponent implements OnInit {
 
@@ -19,23 +20,30 @@ export class CourseComponent implements OnInit {
 
     lessons$: Observable<Lesson[]>;
 
-    constructor(private courseMdService: CourseMdService) {
+    detail$: Observable<Lesson>;
+
+    constructor(
+        private lessonsPager: LessonsPager,
+        private coursesService: CoursesHttpService) {
+
 
     }
 
     ngOnInit() {
-        this.course$ = this.courseMdService.course$;
-        this.lessons$ = this.courseMdService.lessonsPage$;
 
-        this.courseMdService.loadCourseById(this.id);
+        this.course$ = this.coursesService.findCourseById(this.id);
+
+        this.lessons$ = this.lessonsPager.lessonsPage$;
+
+        //this.lessonsPager.loadFirstPage(this.id);
     }
 
     previous() {
-
+        this.lessonsPager.loadPreviousPage();
     }
 
     next() {
-
+        this.lessonsPager.loadPreviousPage();
     }
 
     selectDetail(lesson:Lesson) {

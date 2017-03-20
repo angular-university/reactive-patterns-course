@@ -1,56 +1,51 @@
 import {Injectable} from '@angular/core';
 import {Observable, BehaviorSubject} from "rxjs";
-import {Course} from "../shared/model/course";
 import {Http} from "@angular/http";
 import {Lesson} from "../shared/model/lesson";
 
-const UNKNOWN_COURSE: Course = {
-    id: undefined,
-    url: '',
-    description: '',
-    iconUrl: '',
-    courseListIcon: '',
-    longDescription: ''
-};
 
 @Injectable()
-export class CourseMdService {
+export class LessonsPager {
 
-    private courseSubject = new BehaviorSubject<Course>(UNKNOWN_COURSE);
+    private subject = new BehaviorSubject<Lesson[]>([]);
 
-    course$: Observable<Course> = this.courseSubject.asObservable();
+    lessonsPage$ : Observable<Lesson[]> = this.subject.asObservable();
 
-    private lessonsSubject = new BehaviorSubject<Lesson[]>([]);
-
-    lessonsPage$ : Observable<Lesson[]> = this.lessonsSubject.asObservable();
+    private courseId:number;
+    private currentPageNumber = 1;
 
     constructor(private http:Http) {
 
     }
 
-    loadCourseById(id: number) {
+    loadFirstPage(courseId: number) {
 
-        this.http.get(`/api/courses/${id}`)
-            .map(res => res.json())
-            .subscribe(
-                course => this.courseSubject.next(course)
-            );
+    }
+
+    loadNextPage() {
+
+    }
+
+    loadPreviousPage() {
+
+    }
+
+    loadPage(pageNumber:number) {
+
+        this.currentPageNumber = pageNumber;
 
         this.http.get('/api/lessons/',
             {
                 params: {
-                    courseId:id,
+                    courseId: this.courseId,
                     pageNumber:1,
                     pageSize: 5
                 }
             })
             .map(res => res.json())
             .subscribe(
-                lessons => this.lessonsSubject.next(lessons)
+                lessons => this.subject.next(lessons)
             );
     }
-
-
-
 
 }

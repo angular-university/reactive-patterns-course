@@ -17,6 +17,8 @@ export class LessonsListComponent {
     @Output()
     selected = new EventEmitter<Lesson>();
 
+
+
     select(lesson:Lesson) {
         this.selected.next(lesson);
     }

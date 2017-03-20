@@ -25,6 +25,7 @@ import { AllLessonsComponent } from './all-lessons/all-lessons.component';
 import { CourseComponent } from './course/course.component';
 import { CourseMasterComponent } from './course-master/course-master.component';
 import { LessonDetailComponent } from './lesson-detail/lesson-detail.component';
+import {CoursesHttpService} from "./services/courses-http.service";
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { LessonDetailComponent } from './lesson-detail/lesson-detail.component';
   providers: [
       CoursesService,
       NewsletterService,
-      UserService
+      UserService,
+      CoursesHttpService
   ],
   bootstrap: [AppComponent]
 })

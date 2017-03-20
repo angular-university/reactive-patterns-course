@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { CourseMdService } from './course-md.service';
+import { LessonsPager } from './course-md.service';
 
-describe('CourseMdService', () => {
+describe('LessonsPager', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [CourseMdService]
+      providers: [LessonsPager]
     });
   });
 
-  it('should ...', inject([CourseMdService], (service: CourseMdService) => {
+  it('should ...', inject([LessonsPager], (service: LessonsPager) => {
     expect(service).toBeTruthy();
   }));
 });

@@ -1,16 +1,26 @@
 
 <div class="course-md">
 
-    <h2>Angular For Beginners</h2>
+    <h2>{{ (course$ | async)?.description }}</h2>
 
-    <div class="lessons-nav">
-        <button (click)="previous()">Previous</button>
-        <button (click)="next()">Next</button>
+    <div class="course-md-master" *ngIf="!(detail$ | async) as lessonDetail else detailTpl">
+
+        <div class="lessons-nav">
+            <button (click)="previous()">Previous</button>
+            <button (click)="next()">Next</button>
+        </div>
+
+        <lessons-list (selected)="selectDetail(lesson)"></lessons-list>
+
     </div>
 
-    <lessons-list (selected)="selectDetail(lesson)"></lessons-list>
+    <ng-template #detailTpl>
 
-    <lesson-detail></lesson-detail>
+        <button (click)="back()"></button>
+
+        <lesson-detail [lesson]="lessonDetail"></lesson-detail>
+
+    </ng-template>
 
 </div>
 
