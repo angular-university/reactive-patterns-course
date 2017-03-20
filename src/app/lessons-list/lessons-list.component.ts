@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {Lesson} from "../shared/model/lesson";
 import * as _ from 'lodash';
 import {store} from "../event-bus-experiments/app-data";
@@ -14,7 +14,12 @@ export class LessonsListComponent {
     @Input()
     lessons: Lesson[];
 
+    @Output()
+    selected = new EventEmitter<Lesson>();
 
+    select(lesson:Lesson) {
+        this.selected.next(lesson);
+    }
 
 }
 

@@ -4,11 +4,11 @@
     <h2>Angular For Beginners</h2>
 
     <div class="lessons-nav">
-        <button>Previous</button>
-        <button>Next</button>
+        <button (click)="previous()">Previous</button>
+        <button (click)="next()">Next</button>
     </div>
 
-    <lessons-list></lessons-list>
+    <lessons-list (selected)="selectDetail(lesson)"></lessons-list>
 
     <lesson-detail></lesson-detail>
 
