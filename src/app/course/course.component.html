@@ -11,7 +11,7 @@
         </div>
 
         <lessons-list [lessons]="lessons$ | async"
-                      (selected)="selectDetail(lesson)"></lessons-list>
+                      (selected)="selectDetail($event)"></lessons-list>
 
     </div>
 

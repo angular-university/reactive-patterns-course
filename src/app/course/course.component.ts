@@ -46,7 +46,7 @@ export class CourseComponent implements OnInit {
     }
 
     selectDetail(lesson:Lesson) {
-
+        console.log(lesson);
     }
 
 }
