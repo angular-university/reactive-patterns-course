@@ -37,16 +37,21 @@ export class CourseComponent implements OnInit, OnDestroy {
         this.lessonsPager.loadFirstPage(this.id);
     }
 
-    previous() {
+    previousLessonsPage() {
         this.lessonsPager.loadPreviousPage();
     }
 
-    next() {
+    nextLessonsPage() {
         this.lessonsPager.loadNextPage();
+    }
+
+    backToMaster() {
+        this.detail$ = undefined;
     }
 
     selectDetail(lesson:Lesson) {
         console.log(lesson);
+        this.detail$ = this.coursesService.findLessonDetailById(lesson.url);
     }
 
     ngOnDestroy() {

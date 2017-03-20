@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Http} from "@angular/http";
 import {Observable} from "rxjs";
 import {Course} from "../shared/model/course";
+import {Lesson} from "../shared/model/lesson";
 
 
 
@@ -19,4 +20,8 @@ export class CoursesHttpService {
     }
 
 
+    findLessonDetailById(lessonId): Observable<Lesson> {
+        return this.http.get(`/api/lessons/${lessonId}`)
+            .map(res => res.json());
+    }
 }

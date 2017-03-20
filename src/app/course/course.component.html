@@ -6,8 +6,8 @@
     <div class="course-md-master" *ngIf="!(detail$ | async) as lessonDetail else detailTpl">
 
         <div class="lessons-nav">
-            <button (click)="previous()">Previous</button>
-            <button (click)="next()">Next</button>
+            <button (click)="previousLessonsPage()">Previous</button>
+            <button (click)="nextLessonsPage()">Next</button>
         </div>
 
         <lessons-list [lessons]="lessons$ | async"
@@ -17,7 +17,7 @@
 
     <ng-template #detailTpl>
 
-        <button (click)="back()"></button>
+        <button (click)="backToMaster()"></button>
 
         <lesson-detail [lesson]="lessonDetail"></lesson-detail>
 
