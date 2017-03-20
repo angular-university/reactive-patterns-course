@@ -18,7 +18,7 @@ export class LessonsPager {
     private courseId:number;
 
     constructor(private http:Http) {
-
+        console.log('Creating new LessonsPager instance ...');
     }
 
     loadFirstPage(courseId: number) {

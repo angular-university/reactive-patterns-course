@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, OnDestroy} from '@angular/core';
 import {LessonsPager} from "../services/lessons-pager.service";
 import {Observable} from "rxjs";
 import {Lesson} from "../shared/model/lesson";
@@ -11,7 +11,7 @@ import {Course} from "../shared/model/course";
     styleUrls: ['./course.component.css'],
     providers: [LessonsPager]
 })
-export class CourseComponent implements OnInit {
+export class CourseComponent implements OnInit, OnDestroy {
 
     @Input()
     id: number;
@@ -48,5 +48,10 @@ export class CourseComponent implements OnInit {
     selectDetail(lesson:Lesson) {
         console.log(lesson);
     }
+
+    ngOnDestroy() {
+        console.log('destroying CourseComponent ...');
+    }
+
 
 }
