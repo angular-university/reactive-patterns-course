@@ -39,10 +39,5 @@ export class CourseDetailComponent implements OnInit {
 
     }
 
-    loginAsJohn() {
-      this.userService.login('john@gmail.com', 'test123').subscribe();
-    }
-
-
 
 }

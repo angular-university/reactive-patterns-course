@@ -1,12 +1,6 @@
 
 <div class="screen-container">
 
-    <button class="button button-primary" style="margin-bottom: 15px"
-            (click)="loginAsJohn()">Login As John </button>
-
-    <course-detail-header [course]="course$ |async" [lessons]="lessons$ |async">
-    </course-detail-header>
-
     <lessons-list [lessons]="lessons$ | async"></lessons-list>
 
 </div>
