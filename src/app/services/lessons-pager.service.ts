@@ -43,7 +43,7 @@ export class LessonsPager {
 
         this.currentPageNumber = pageNumber;
 
-        this.http.get('/api/lessons/',
+        this.http.get('/api/lessons',
             {
                 params: {
                     courseId: this.courseId,
@@ -51,7 +51,7 @@ export class LessonsPager {
                     pageSize: LessonsPager.PAGE_SIZE
                 }
             })
-            .map(res => res.json())
+            .map(res => res.json().payload)
             .subscribe(
                 lessons => this.subject.next(lessons)
             );

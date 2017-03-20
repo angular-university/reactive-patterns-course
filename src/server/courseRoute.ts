@@ -7,8 +7,6 @@ export function courseRoute(req, res) {
 
     const courseId = parseInt(req.params['id']) - 1;
 
-    console.log('courseId', courseId);
-
     const course = dbData[courseId];
 
     res.status(200).json({
