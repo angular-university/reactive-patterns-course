@@ -7,6 +7,8 @@ import {Lesson} from "../shared/model/lesson";
 @Injectable()
 export class LessonsPager {
 
+    private static readonly PAGE_SIZE = 3;
+
     private subject = new BehaviorSubject<Lesson[]>([]);
 
     lessonsPage$ : Observable<Lesson[]> = this.subject.asObservable();
@@ -21,15 +23,20 @@ export class LessonsPager {
     }
 
     loadFirstPage(courseId: number) {
-
+        this.currentPageNumber = 1;
+        this.loadPage(this.currentPageNumber);
     }
 
     loadNextPage() {
-
+        this.currentPageNumber += 1;
+        this.loadPage(this.currentPageNumber);
     }
 
     loadPreviousPage() {
-
+        if (this.currentPageNumber - 1 > 1) {
+            this.currentPageNumber -= 1;
+            this.loadPage(this.currentPageNumber);
+        }
     }
 
     loadPage(pageNumber:number) {
@@ -41,7 +48,7 @@ export class LessonsPager {
                 params: {
                     courseId: this.courseId,
                     pageNumber:1,
-                    pageSize: 5
+                    pageSize: LessonsPager.PAGE_SIZE
                 }
             })
             .map(res => res.json())

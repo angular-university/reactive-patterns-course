@@ -26,7 +26,6 @@ export class CourseComponent implements OnInit {
         private lessonsPager: LessonsPager,
         private coursesService: CoursesHttpService) {
 
-
     }
 
     ngOnInit() {
@@ -35,7 +34,7 @@ export class CourseComponent implements OnInit {
 
         this.lessons$ = this.lessonsPager.lessonsPage$;
 
-        //this.lessonsPager.loadFirstPage(this.id);
+        this.lessonsPager.loadFirstPage(this.id);
     }
 
     previous() {
