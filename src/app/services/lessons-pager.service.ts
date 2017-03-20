@@ -11,8 +11,10 @@ export class LessonsPager {
 
     lessonsPage$ : Observable<Lesson[]> = this.subject.asObservable();
 
+    currentPageNumber = 1;
+
     private courseId:number;
-    private currentPageNumber = 1;
+
 
     constructor(private http:Http) {
 

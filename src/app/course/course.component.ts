@@ -1,5 +1,5 @@
 import {Component, OnInit, Input} from '@angular/core';
-import {LessonsPager} from "../services/course-md.service";
+import {LessonsPager} from "../services/lessons-pager.service";
 import {Observable} from "rxjs";
 import {Lesson} from "../shared/model/lesson";
 import {CoursesHttpService} from "../services/courses-http.service";

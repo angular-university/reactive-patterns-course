@@ -1,5 +1,4 @@
-export const dbData = {
-    "courses": [
+export const dbData =  [
         {
             "id": 1,
             "url": "getting-started-with-angular2",
@@ -267,5 +266,4 @@ export const dbData = {
                 }
             ]
         }
-    ]
-};
+    ];

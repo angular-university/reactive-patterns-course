@@ -14,7 +14,7 @@ export class CoursesHttpService {
     }
 
     findCourseById(courseId: number): Observable<Course> {
-        return this.http.get(`/api/course/${courseId}`)
+        return this.http.get(`/api/courses/${courseId}`)
                 .map(res => res.json());
     }
 
