@@ -24,7 +24,6 @@ import {UserService} from "./services/user.service";
 import { AllLessonsComponent } from './all-lessons/all-lessons.component';
 import { CourseComponent } from './course/course.component';
 import { CourseMasterComponent } from './course-master/course-master.component';
-import {CourseMdService} from "./services/course-md.service";
 import { LessonDetailComponent } from './lesson-detail/lesson-detail.component';
 
 
@@ -57,8 +56,7 @@ import { LessonDetailComponent } from './lesson-detail/lesson-detail.component';
   providers: [
       CoursesService,
       NewsletterService,
-      UserService,
-      CourseMdService
+      UserService
   ],
   bootstrap: [AppComponent]
 })

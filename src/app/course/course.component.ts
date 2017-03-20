@@ -4,7 +4,8 @@ import {CourseMdService} from "../services/course-md.service";
 @Component({
     selector: 'course',
     templateUrl: './course.component.html',
-    styleUrls: ['./course.component.css']
+    styleUrls: ['./course.component.css'],
+    providers: [CourseMdService]
 })
 export class CourseComponent implements OnInit {
 
@@ -12,6 +13,7 @@ export class CourseComponent implements OnInit {
     id: number;
 
     constructor(private courseMdService: CourseMdService) {
+
     }
 
     ngOnInit() {
