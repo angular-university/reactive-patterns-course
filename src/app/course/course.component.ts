@@ -42,7 +42,7 @@ export class CourseComponent implements OnInit {
     }
 
     next() {
-        this.lessonsPager.loadPreviousPage();
+        this.lessonsPager.loadNextPage();
     }
 
     selectDetail(lesson:Lesson) {

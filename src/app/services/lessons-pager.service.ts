@@ -33,7 +33,7 @@ export class LessonsPager {
     }
 
     loadPreviousPage() {
-        if (this.currentPageNumber - 1 > 1) {
+        if (this.currentPageNumber - 1 >= 1) {
             this.currentPageNumber -= 1;
             this.loadPage(this.currentPageNumber);
         }
@@ -47,7 +47,7 @@ export class LessonsPager {
             {
                 params: {
                     courseId: this.courseId,
-                    pageNumber:1,
+                    pageNumber,
                     pageSize: LessonsPager.PAGE_SIZE
                 }
             })
