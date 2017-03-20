@@ -1,17 +1,24 @@
 
 import {dbData} from "./db-data";
-
+import * as _ from 'lodash';
 
 
 export function lessonsRoute(req, res) {
 
     console.log(req.query);
 
-    const courseId = parseInt(req.query['courseId']) - 1;
+    const courseId = parseInt(req.query['courseId']) - 1,
+        pageNumber = parseInt(req.query['pageNumber']),
+        pageSize = parseInt(req.query['pageSize']);
 
     const lessons = dbData[courseId].lessons;
 
-    res.status(200).json({payload: lessons.map(buildLessonSummary)});
+    const start = ( pageNumber - 1 ) * pageSize,
+        end = start + pageSize;
+
+    const lessonsPage = _.slice(lessons, start, end );
+
+    res.status(200).json({payload: lessonsPage.map(buildLessonSummary)});
 
 }
 
