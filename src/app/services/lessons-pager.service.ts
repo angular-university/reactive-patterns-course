@@ -17,12 +17,12 @@ export class LessonsPager {
 
     private courseId:number;
 
-
     constructor(private http:Http) {
 
     }
 
     loadFirstPage(courseId: number) {
+        this.courseId = courseId;
         this.currentPageNumber = 1;
         this.loadPage(this.currentPageNumber);
     }

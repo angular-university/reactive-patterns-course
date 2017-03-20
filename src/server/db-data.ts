@@ -12,7 +12,7 @@ export const dbData =  [
                     "description": "Angular 2 Tutorial For Beginners - Build Your First App - Hello World Step By Step",
                     "duration": "2:49",
                     "tags": "BEGINNER",
-                    videoUrl: "https://www.youtube.com/embed/du6sKwEFrhQ",
+                     videoUrl: "https://www.youtube.com/embed/du6sKwEFrhQ",
                     "longDescription": "This is step by step guide to create your first Angular 2 application. Its aimed at beginners just starting out with the framework.This lesson will show how to create a component, and how to link the component to a given custom HTML tag. It will show how to give the component a given template."
                 },
                 {

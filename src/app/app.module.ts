@@ -23,7 +23,6 @@ import { LoginComponent } from './login/login.component';
 import {UserService} from "./services/user.service";
 import { AllLessonsComponent } from './all-lessons/all-lessons.component';
 import { CourseComponent } from './course/course.component';
-import { CourseMasterComponent } from './course-master/course-master.component';
 import { LessonDetailComponent } from './lesson-detail/lesson-detail.component';
 import {CoursesHttpService} from "./services/courses-http.service";
 
@@ -44,7 +43,6 @@ import {CoursesHttpService} from "./services/courses-http.service";
     LoginComponent,
     AllLessonsComponent,
     CourseComponent,
-    CourseMasterComponent,
     LessonDetailComponent
   ],
   imports: [

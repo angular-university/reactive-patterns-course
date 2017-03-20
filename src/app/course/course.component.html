@@ -10,7 +10,8 @@
             <button (click)="next()">Next</button>
         </div>
 
-        <lessons-list [lessons]="lessons$ | async" (selected)="selectDetail(lesson)"></lessons-list>
+        <lessons-list [lessons]="lessons$ | async"
+                      (selected)="selectDetail(lesson)"></lessons-list>
 
     </div>
 
