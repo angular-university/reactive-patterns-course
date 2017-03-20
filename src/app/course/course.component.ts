@@ -50,7 +50,6 @@ export class CourseComponent implements OnInit, OnDestroy {
     }
 
     selectDetail(lesson:Lesson) {
-        console.log(lesson);
         this.detail$ = this.coursesService.findLessonDetailById(lesson.url);
     }
 

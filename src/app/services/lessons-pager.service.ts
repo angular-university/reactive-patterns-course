@@ -7,7 +7,7 @@ import {Lesson} from "../shared/model/lesson";
 @Injectable()
 export class LessonsPager {
 
-    private static readonly PAGE_SIZE = 3;
+    private static readonly PAGE_SIZE = 2;
 
     private subject = new BehaviorSubject<Lesson[]>([]);
 
