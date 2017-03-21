@@ -19,6 +19,8 @@ export class CourseComponent implements OnInit, OnDestroy {
     course$: Observable<Course>;
     lessons$: Observable<Lesson[]>;
 
+    detail$: Observable<Lesson>;
+
     constructor(private coursesService: CoursesHttpService,
                 private lessonsPager:LessonsPagerService) {
 
@@ -37,6 +39,14 @@ export class CourseComponent implements OnInit, OnDestroy {
 
     nextLessonsPage() {
         this.lessonsPager.next();
+    }
+
+    selectDetail(lesson:Lesson) {
+        this.detail$ = this.coursesService.findLessonDetailById(lesson.url);
+    }
+
+    backToMaster() {
+        this.detail$ = undefined;
     }
 
     ngOnDestroy() {

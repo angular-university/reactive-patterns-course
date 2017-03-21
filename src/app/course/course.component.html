@@ -3,12 +3,28 @@
 
     <h2>{{ (course$ | async)?.description }}</h2>
 
-    <div class="lessons-nav">
-        <button (click)="previousLessonsPage()">Previous</button>
-        <button (click)="nextLessonsPage()">Next</button>
+    <div *ngIf=" detail$ | async as lessonDetail else masterTpl">
+
+        <button (click)="backToMaster()">Back</button>
+
+        <lesson-detail [lesson]="lessonDetail"></lesson-detail>
+
     </div>
 
-    <lessons-list [lessons]="lessons$ | async"></lessons-list>
+
+    <ng-template #masterTpl>
+
+        <div class="lessons-nav" >
+            <button (click)="previousLessonsPage()">Previous</button>
+            <button (click)="nextLessonsPage()">Next</button>
+        </div>
+
+        <lessons-list [lessons]="lessons$ | async"
+            (selected)="selectDetail($event)"></lessons-list>
+
+    </ng-template>
+
+
 
 </div>
 
