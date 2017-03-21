@@ -26,6 +26,7 @@ import {CourseComponent} from './course/course.component';
 import {LessonDetailComponent} from './lesson-detail/lesson-detail.component';
 import {CoursesHttpService} from "./services/courses-http.service";
 import {SafeUrlPipe} from "./shared/pipes/safe-url.pipe";
+import {LessonsPagerService} from "./services/lessons-pager.service";
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import {SafeUrlPipe} from "./shared/pipes/safe-url.pipe";
         CoursesService,
         NewsletterService,
         UserService,
-        CoursesHttpService
+        CoursesHttpService,
+        LessonsPagerService
     ],
     bootstrap: [AppComponent]
 })
