@@ -59,8 +59,7 @@ import {LessonsPagerService} from "./services/lessons-pager.service";
         CoursesService,
         NewsletterService,
         UserService,
-        CoursesHttpService,
-        LessonsPagerService
+        CoursesHttpService
     ],
     bootstrap: [AppComponent]
 })

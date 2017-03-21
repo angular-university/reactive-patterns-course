@@ -18,7 +18,7 @@ export class LessonsPagerService {
 
 
     constructor(private http:Http) {
-
+        console.log('LessonsPagerService instance created ..');
     }
 
 
