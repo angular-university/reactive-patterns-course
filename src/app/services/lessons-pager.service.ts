@@ -23,25 +23,49 @@ export class LessonsPagerService {
 
 
     loadFirstPage(courseId: number) {
-
         this.courseId = courseId;
         this.currentPageNumber = 1;
+        this.loadPage(this.currentPageNumber);
+    }
 
+    previous() {
+        if (this.currentPageNumber - 1 >= 1) {
+            this.currentPageNumber -= 1;
+            this.loadPage(this.currentPageNumber);
+        }
+    }
+
+    next() {
+        this.currentPageNumber += 1;
+        this.loadPage(this.currentPageNumber);
+    }
+
+
+    loadPage(pageNumber:number) {
         this.http.get('/api/lessons', {
             params: {
                 courseId: this.courseId,
-                pageNumber: 1,
+                pageNumber,
                 pageSize: LessonsPagerService.PAGE_SIZE
             }
         })
-        .map(res => res.json().payload)
-        .subscribe(
-            lessons => this.subject.next(lessons)
-        );
-
-
+            .map(res => res.json().payload)
+            .subscribe(
+                lessons => this.subject.next(lessons)
+            );
     }
+
 }
+
+
+
+
+
+
+
+
+
+
 
 
 

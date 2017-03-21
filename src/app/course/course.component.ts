@@ -30,8 +30,24 @@ export class CourseComponent implements OnInit, OnDestroy {
         this.lessonsPager.loadFirstPage(this.id);
     }
 
+    previousLessonsPage() {
+        this.lessonsPager.previous();
+    }
+
+    nextLessonsPage() {
+        this.lessonsPager.next();
+    }
+
     ngOnDestroy() {
         console.log('destroying CourseComponent ...');
     }
 
 }
+
+
+
+
+
+
+
+
