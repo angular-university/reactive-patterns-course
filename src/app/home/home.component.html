@@ -4,7 +4,7 @@
     <h2>Smart vs Presentational Components</h2>
 
     <table class="courses-list card card-strong"
-           *ngIf="courses$ | async ; else loadingCourses; let courses">
+           *ngIf="courses$ | async as courses else loadingCourses">
         <tr class="course-summary" *ngFor="let course of courses">
             <td>
                 <img class="lesson-logo"
@@ -30,7 +30,7 @@
     <h2>Latest Lessons Published</h2>
 
     <table class="table lessons-list card card-strong"
-           *ngIf="latestLessons$ | async ; else  loadingLessons; let lessons">
+           *ngIf="latestLessons$ | async as lessons else loadingLessons">
         <tbody>
         <tr *ngFor="let lesson of lessons">
             <td class="lesson-title"> {{lesson.description}}</td>
