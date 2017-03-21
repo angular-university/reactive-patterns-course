@@ -19,6 +19,7 @@ console.log('Starting server ...');
 
 app.route('/api/newsletter').post(newsletterRoute);
 app.route('/api/login').post(loginRoute);
+
 app.route('/api/courses/:id').get(courseRoute);
 app.route('/api/lessons').get(lessonsRoute);
 app.route('/api/lessons/:id').get(lessonDetailRoute);

@@ -21,22 +21,6 @@ export class CourseComponent implements OnInit, OnDestroy {
 
     }
 
-    previousLessonsPage() {
-
-    }
-
-    nextLessonsPage() {
-
-    }
-
-    backToMaster() {
-
-    }
-
-    selectDetail(lesson:Lesson) {
-
-    }
-
     ngOnDestroy() {
         console.log('destroying CourseComponent ...');
     }
