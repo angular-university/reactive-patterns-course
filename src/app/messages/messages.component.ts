@@ -8,7 +8,7 @@ import {Observable} from "rxjs";
 })
 export class MessagesComponent implements OnInit {
 
-    messages$: Observable<string[]> = Observable.of(['testing 123']);
+  messages$: Observable<string[]> = Observable.of([]);
 
   constructor() {
 
