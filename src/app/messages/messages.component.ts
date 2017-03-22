@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from "rxjs";
+import {MessagesService} from "../services/messages.service";
 
 @Component({
   selector: 'messages',
@@ -8,14 +9,20 @@ import {Observable} from "rxjs";
 })
 export class MessagesComponent implements OnInit {
 
-  messages$: Observable<string[]> = Observable.of([]);
+  errors$: Observable<string[]>;
 
-  constructor() {
+  constructor(private messagesService:MessagesService) {
 
   }
 
   ngOnInit() {
 
+        this.errors$ = this.messagesService.errors$;
+
   }
+
+    close() {
+      this.messagesService.error();
+    }
 
 }

@@ -4,6 +4,7 @@ import {Lesson} from "../shared/model/lesson";
 import {CoursesHttpService} from "../services/courses-http.service";
 import {Course} from "../shared/model/course";
 import {LessonsPagerService} from "../services/lessons-pager.service";
+import {MessagesService} from "../services/messages.service";
 
 @Component({
     selector: 'course',
@@ -22,7 +23,8 @@ export class CourseComponent implements OnInit, OnDestroy {
     detail$: Observable<Lesson>;
 
     constructor(private coursesService: CoursesHttpService,
-                private lessonsPager:LessonsPagerService) {
+                private lessonsPager:LessonsPagerService,
+                private messagesService:MessagesService) {
 
     }
 
@@ -33,21 +35,21 @@ export class CourseComponent implements OnInit, OnDestroy {
         this.lessonsPager.loadFirstPage(this.id)
             .subscribe(
                 () => {},
-                err => alert('error loading the first page')
+                err => this.messagesService.error('Could not load first page')
             );
     }
 
     previousLessonsPage() {
         this.lessonsPager.previous().subscribe(
             () => {},
-            err => alert('error loading the previous page')
+            err => this.messagesService.error('Could not load previous page')
         );
     }
 
     nextLessonsPage() {
         this.lessonsPager.next().subscribe(
             () => {},
-            err => alert('error loading the next page')
+            err => this.messagesService.error('Could not load next page')
         );
     }
 
