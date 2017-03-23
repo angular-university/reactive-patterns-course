@@ -10,7 +10,7 @@ import {MessagesService} from "../services/messages.service";
     selector: 'course',
     templateUrl: './course.component.html',
     styleUrls: ['./course.component.css'],
-    providers: [LessonsPagerService]
+    providers: [LessonsPagerService, MessagesService]
 })
 export class CourseComponent implements OnInit, OnDestroy {
 

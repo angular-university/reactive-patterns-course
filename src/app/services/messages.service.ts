@@ -11,7 +11,7 @@ export class MessagesService {
 
 
     constructor() {
-
+        console.log('created MessagesService...');
     }
 
     error(...errors:string[]) {
