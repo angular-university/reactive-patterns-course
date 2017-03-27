@@ -28,8 +28,6 @@ import {CoursesHttpService} from "./services/courses-http.service";
 import {SafeUrlPipe} from "./shared/pipes/safe-url.pipe";
 import { MessagesComponent } from './messages/messages.component';
 import {MessagesService} from "./services/messages.service";
-import { LoadingComponent } from './loading/loading.component';
-import {CourseDetailResolver} from "./course-detail/course.resolver";
 import { CreateLessonComponent } from './create-lesson/create-lesson.component';
 
 
@@ -52,7 +50,6 @@ import { CreateLessonComponent } from './create-lesson/create-lesson.component';
         LessonDetailComponent,
         SafeUrlPipe,
         MessagesComponent,
-        LoadingComponent,
         CreateLessonComponent
     ],
     imports: [
@@ -68,8 +65,7 @@ import { CreateLessonComponent } from './create-lesson/create-lesson.component';
         NewsletterService,
         UserService,
         CoursesHttpService,
-        MessagesService,
-        CourseDetailResolver
+        MessagesService
     ],
     bootstrap: [AppComponent]
 })

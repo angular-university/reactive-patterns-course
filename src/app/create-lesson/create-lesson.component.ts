@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from "@angular/forms";
-import * as Cookies from 'cookies-js';
 
 @Component({
     selector: 'create-lesson',
@@ -9,10 +8,7 @@ import * as Cookies from 'cookies-js';
 })
 export class CreateLessonComponent implements OnInit {
 
-    private static readonly DRAFT_COOKIE = 'create-lesson-form-draft';
-
     form: FormGroup;
-
 
     constructor(private fb: FormBuilder) {
 
@@ -26,16 +22,6 @@ export class CreateLessonComponent implements OnInit {
 
     ngOnInit() {
 
-        const draft = Cookies.get(CreateLessonComponent.DRAFT_COOKIE);
-
-        if (draft) {
-            this.form.setValue(JSON.parse(draft));
-        }
-
-        this.form.valueChanges
-            .filter( () => this.form.valid )
-            .do(val => Cookies.set(CreateLessonComponent.DRAFT_COOKIE, JSON.stringify(val)))
-            .subscribe();
     }
 
 }
