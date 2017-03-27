@@ -1,0 +1,24 @@
+
+.lesson-form {
+    width: 320px;
+    margin: 0 auto;
+}
+
+form label {
+    width: 100px;
+    display: inline-block;
+    text-align: right;
+    vertical-align: top;
+    margin-right: 5px;
+}
+
+.form-field {
+    margin-bottom: 15px;
+}
+
+
+.form-buttons {
+    margin-top: 30px;
+    text-align: left;
+    margin-left: 15px;
+}
