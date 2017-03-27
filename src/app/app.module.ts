@@ -26,11 +26,9 @@ import {CourseComponent} from './course/course.component';
 import {LessonDetailComponent} from './lesson-detail/lesson-detail.component';
 import {CoursesHttpService} from "./services/courses-http.service";
 import {SafeUrlPipe} from "./shared/pipes/safe-url.pipe";
-import {LessonsPagerService} from "./services/lessons-pager.service";
 import { MessagesComponent } from './messages/messages.component';
 import {MessagesService} from "./services/messages.service";
 import { LoadingComponent } from './loading/loading.component';
-import {LoadingService} from "./loading/loading.service";
 import {CourseDetailResolver} from "./course-detail/course.resolver";
 
 
@@ -68,7 +66,6 @@ import {CourseDetailResolver} from "./course-detail/course.resolver";
         UserService,
         CoursesHttpService,
         MessagesService,
-        LoadingService,
         CourseDetailResolver
     ],
     bootstrap: [AppComponent]

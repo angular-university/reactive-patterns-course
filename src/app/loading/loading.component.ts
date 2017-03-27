@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {LoadingService} from "./loading.service";
 import {Observable} from "rxjs";
+import {Router, NavigationStart, RoutesRecognized} from "@angular/router";
 
 @Component({
   selector: 'loading',
@@ -11,12 +11,15 @@ export class LoadingComponent implements OnInit {
 
   loading$: Observable<boolean>;
 
-  constructor(private loadingService: LoadingService) {
+  constructor(private router: Router) {
 
   }
 
   ngOnInit() {
-      this.loading$ = this.loadingService.loading$;
+      this.loading$ = this.router.events
+          .do(console.log)
+          .map(event =>  event instanceof NavigationStart || event instanceof RoutesRecognized)
+          .do(console.log);
   }
 
 }
