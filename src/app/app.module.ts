@@ -31,6 +31,8 @@ import { MessagesComponent } from './messages/messages.component';
 import {MessagesService} from "./services/messages.service";
 import { LoadingComponent } from './loading/loading.component';
 import {LoadingService} from "./loading/loading.service";
+import {CourseDetailResolver} from "./course-detail/course.resolver";
+import {LessonsResolver} from "./course-detail/lessons.resolver";
 
 
 @NgModule({
@@ -67,8 +69,9 @@ import {LoadingService} from "./loading/loading.service";
         UserService,
         CoursesHttpService,
         MessagesService,
-        LoadingService
-
+        LoadingService,
+        CourseDetailResolver,
+        LessonsResolver
     ],
     bootstrap: [AppComponent]
 })

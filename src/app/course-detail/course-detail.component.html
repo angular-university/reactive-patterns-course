@@ -1,6 +1,8 @@
 
 <div class="screen-container">
 
+    <h2> {{ (course$ | async)?.description }} </h2>
+
     <lessons-list [lessons]="lessons$ | async"></lessons-list>
 
 </div>
