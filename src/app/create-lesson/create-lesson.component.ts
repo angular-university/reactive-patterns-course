@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from "@angular/forms";
+import * as Cookies from 'cookies-js';
 
 @Component({
     selector: 'create-lesson',
@@ -7,6 +8,8 @@ import {FormGroup, FormBuilder, Validators} from "@angular/forms";
     styleUrls: ['./create-lesson.component.css']
 })
 export class CreateLessonComponent implements OnInit {
+
+    private static readonly DRAFT_COOKIE = 'create-lesson-form-draft';
 
     form: FormGroup;
 
@@ -16,14 +19,23 @@ export class CreateLessonComponent implements OnInit {
         this.form = this.fb.group({
             description: ['',Validators.required],
             url: ['',Validators.required],
-            videoUrl: ['',[Validators.required]],
-            tags: ['',Validators.required],
             longDescription: ['']
         });
 
     }
 
     ngOnInit() {
+
+        const draft = Cookies.get(CreateLessonComponent.DRAFT_COOKIE);
+
+        if (draft) {
+            this.form.setValue(JSON.parse(draft));
+        }
+
+        this.form.valueChanges
+            .filter( () => this.form.valid )
+            .do(val => Cookies.set(CreateLessonComponent.DRAFT_COOKIE, JSON.stringify(val)))
+            .subscribe();
     }
 
 }
