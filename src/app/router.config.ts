@@ -4,6 +4,7 @@ import {CourseDetailComponent} from "./course-detail/course-detail.component";
 import {LoginComponent} from "./login/login.component";
 import {AllLessonsComponent} from "./all-lessons/all-lessons.component";
 import {CourseDetailResolver} from "./course-detail/course.resolver";
+import {CreateLessonComponent} from "./create-lesson/create-lesson.component";
 
 export const routerConfig: Routes = [
     {
@@ -24,6 +25,10 @@ export const routerConfig: Routes = [
         resolve: {
             detail: CourseDetailResolver
         }
+    },
+    {
+        path: 'lesson/new',
+        component: CreateLessonComponent
     },
     {
         path: '',
