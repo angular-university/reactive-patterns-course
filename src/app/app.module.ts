@@ -29,6 +29,7 @@ import {SafeUrlPipe} from "./shared/pipes/safe-url.pipe";
 import { MessagesComponent } from './messages/messages.component';
 import {MessagesService} from "./services/messages.service";
 import { CreateLessonComponent } from './create-lesson/create-lesson.component';
+import {CourseDetailResolver} from "./course-detail/course-detail.resolver";
 
 
 @NgModule({
@@ -65,7 +66,8 @@ import { CreateLessonComponent } from './create-lesson/create-lesson.component';
         NewsletterService,
         UserService,
         CoursesHttpService,
-        MessagesService
+        MessagesService,
+        CourseDetailResolver
     ],
     bootstrap: [AppComponent]
 })
