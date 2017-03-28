@@ -57,7 +57,6 @@ import { LoadingComponent } from './loading/loading.component';
     ],
     imports: [
         BrowserModule,
-        FormsModule,
         HttpModule,
         AngularFireModule.initializeApp(firebaseConfig),
         RouterModule.forRoot(routerConfig),
