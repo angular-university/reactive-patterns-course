@@ -30,6 +30,7 @@ import { MessagesComponent } from './messages/messages.component';
 import {MessagesService} from "./services/messages.service";
 import { CreateLessonComponent } from './create-lesson/create-lesson.component';
 import {CourseDetailResolver} from "./course-detail/course-detail.resolver";
+import { LoadingComponent } from './loading/loading.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import {CourseDetailResolver} from "./course-detail/course-detail.resolver";
         LessonDetailComponent,
         SafeUrlPipe,
         MessagesComponent,
-        CreateLessonComponent
+        CreateLessonComponent,
+        LoadingComponent
     ],
     imports: [
         BrowserModule,
