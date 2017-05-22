@@ -8,7 +8,6 @@ import {EventBusExperimentsComponent} from './event-bus-experiments/event-bus-ex
 import {LessonsListComponent} from './lessons-list/lessons-list.component';
 import {LessonsCounterComponent} from './lessons-counter/lessons-counter.component';
 import {HomeComponent} from './home/home.component';
-import {firebaseConfig} from "../environments/firebase.config";
 import {AngularFireModule} from 'angularfire2';
 import {RouterModule} from '@angular/router';
 import {routerConfig} from "./router.config";
@@ -31,6 +30,8 @@ import {MessagesService} from "./services/messages.service";
 import { CreateLessonComponent } from './create-lesson/create-lesson.component';
 import {CourseDetailResolver} from "./course-detail/course-detail.resolver";
 import { LoadingComponent } from './loading/loading.component';
+import {firebaseConfig} from "../environments/firebase.config";
+import {AngularFireDatabaseModule} from "angularfire2/database";
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { LoadingComponent } from './loading/loading.component';
         FormsModule,
         AngularFireModule.initializeApp(firebaseConfig),
         RouterModule.forRoot(routerConfig),
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        AngularFireDatabaseModule
     ],
     providers: [
         CoursesService,
