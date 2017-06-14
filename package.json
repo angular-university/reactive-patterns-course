@@ -30,6 +30,7 @@
     "express": "^4.15.2",
     "firebase": "^4.0.0",
     "lodash": "^4.17.4",
+    "promise-polyfill": "^6.0.2",
     "rxjs": "^5.1.0",
     "ts-helpers": "^1.1.1",
     "zone.js": "^0.8.4"
