@@ -51,7 +51,9 @@ If you now go to [http://localhost:8080](http://localhost:8080), there will be a
 If you edit a Typescript file and refresh the browser, the changes will be applied.
 
 # Firebase data for later in the course
-In one of the sections of the course, we will be using a Firebase database. If you would like the data to create your own instance, its available [here](https://github.com/angular-university/angular-firebase-app/blob/master/db-data.ts) online.
+In one of the sections of the course, we will be using a Firebase database. If you would like the data to create your own instance, you can find it [here](https://github.com/angular-university/angular-firebase-app/blob/master/db-data.ts).
+
+This is completely optional, as the course will use a connection to an existing Firebase database, and everything will work out of the box.
 
 
 # Which Course are You Looking For ?
