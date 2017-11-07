@@ -21,6 +21,8 @@ import {NewsletterService} from "./services/newsletter.service";
 import { TopMenuComponent } from './top-menu/top-menu.component';
 import { LoginComponent } from './login/login.component';
 import {UserService} from "./services/user.service";
+import {AngularFireAuthModule} from "angularfire2/auth";
+import {AngularFireDatabaseModule} from "angularfire2/database";
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import {UserService} from "./services/user.service";
     FormsModule,
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
+      AngularFireDatabaseModule,
+      AngularFireAuthModule,
     RouterModule.forRoot(routerConfig),
   ],
   providers: [
