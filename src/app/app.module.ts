@@ -20,6 +20,8 @@ import { NewsletterComponent } from './newsletter/newsletter.component';
 import {NewsletterService} from "./services/newsletter.service"; 
 import { TopMenuComponent } from './top-menu/top-menu.component';
 import { LoginComponent } from './login/login.component';
+import {AngularFireDatabaseModule} from "angularfire2/database";
+import {AngularFireAuthModule} from "angularfire2/auth";
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
     RouterModule.forRoot(routerConfig),
   ],
   providers: [
