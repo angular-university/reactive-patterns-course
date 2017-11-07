@@ -31,6 +31,8 @@ import {MessagesService} from "./services/messages.service";
 import { CreateLessonComponent } from './create-lesson/create-lesson.component';
 import {CourseDetailResolver} from "./course-detail/course-detail.resolver";
 import { LoadingComponent } from './loading/loading.component';
+import {AngularFireDatabaseModule} from "angularfire2/database";
+import {AngularFireAuthModule} from "angularfire2/auth";
 
 
 @NgModule({
@@ -60,6 +62,8 @@ import { LoadingComponent } from './loading/loading.component';
         HttpModule,
         FormsModule,
         AngularFireModule.initializeApp(firebaseConfig),
+        AngularFireDatabaseModule,
+        AngularFireAuthModule,
         RouterModule.forRoot(routerConfig),
         ReactiveFormsModule
     ],

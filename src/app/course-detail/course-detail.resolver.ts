@@ -22,7 +22,7 @@ export class CourseDetailResolver implements Resolve<[Course,(Lesson[])]> {
 
         return this.coursesService.findCourseByUrl(route.params['id'])
             .switchMap(course => this.coursesService.findLessonsForCourse(course.id),
-                (course, lessons) => [course, lessons] );
+                (course, lessons) => <any>[course, lessons] );
 
 
     }
