@@ -27,6 +27,8 @@ import {LessonDetailComponent} from './lesson-detail/lesson-detail.component';
 import {CoursesHttpService} from "./services/courses-http.service";
 import {SafeUrlPipe} from "./shared/pipes/safe-url.pipe";
 import {LessonsPagerService} from "./services/lessons-pager.service";
+import {AngularFireAuthModule} from "angularfire2/auth";
+import {AngularFireDatabaseModule} from "angularfire2/database";
 
 
 @NgModule({
@@ -53,6 +55,8 @@ import {LessonsPagerService} from "./services/lessons-pager.service";
         FormsModule,
         HttpModule,
         AngularFireModule.initializeApp(firebaseConfig),
+        AngularFireDatabaseModule,
+        AngularFireAuthModule,
         RouterModule.forRoot(routerConfig),
     ],
     providers: [
