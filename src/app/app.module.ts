@@ -29,6 +29,8 @@ import {SafeUrlPipe} from "./shared/pipes/safe-url.pipe";
 import { MessagesComponent } from './messages/messages.component';
 import {MessagesService} from "./services/messages.service";
 import { CreateLessonComponent } from './create-lesson/create-lesson.component';
+import {AngularFireDatabaseModule} from "angularfire2/database";
+import {AngularFireAuthModule} from "angularfire2/auth";
 
 
 @NgModule({
@@ -57,6 +59,8 @@ import { CreateLessonComponent } from './create-lesson/create-lesson.component';
         FormsModule,
         HttpModule,
         AngularFireModule.initializeApp(firebaseConfig),
+        AngularFireDatabaseModule,
+        AngularFireAuthModule,
         RouterModule.forRoot(routerConfig),
         ReactiveFormsModule
     ],

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {AngularFireDatabase} from 'angularfire2';
+import {AngularFireDatabase} from 'angularfire2/database';
 import {Course} from "../shared/model/course";
 import {Observable} from 'rxjs';
 import {Lesson} from "../shared/model/lesson";
