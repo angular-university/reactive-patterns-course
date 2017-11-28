@@ -10,6 +10,7 @@ import { LessonsCounterComponent } from './lessons-counter/lessons-counter.compo
 import { HomeComponent } from './home/home.component';
 import {firebaseConfig} from "../environments/firebase.config";
 import {AngularFireModule} from 'angularfire2';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {RouterModule} from '@angular/router';
 import {routerConfig} from "./router.config";
 import { CourseDetailComponent } from './course-detail/course-detail.component';
@@ -29,6 +30,7 @@ import { CourseDetailComponent } from './course-detail/course-detail.component';
     FormsModule,
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
     RouterModule.forRoot(routerConfig),
   ],
   providers: [],
