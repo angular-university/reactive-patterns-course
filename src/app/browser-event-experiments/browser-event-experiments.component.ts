@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Observable, Subscription} from 'rxjs';
+import {fromEvent, Subscription} from 'rxjs';
 
 @Component({
   selector: 'browser-event-experiments',
@@ -16,9 +16,9 @@ export class BrowserEventExperimentsComponent implements OnInit {
 
       this.hoverSection = document.getElementById('hover');
 
-      const mouseMove$ = Observable.fromEvent(this.hoverSection, 'mousemove');
+      const mouseMove$ = fromEvent(this.hoverSection, 'mousemove');
 
-      const click$ = Observable.fromEvent(this.hoverSection, 'click');
+      const click$ = fromEvent(this.hoverSection, 'click');
 
       const combined$  = click$.withLatestFrom(mouseMove$)
             .map(events => events[1]);
