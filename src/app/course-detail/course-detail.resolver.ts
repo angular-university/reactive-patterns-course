@@ -11,9 +11,7 @@ import {CoursesService} from "../services/courses.service";
 @Injectable()
 export class CourseDetailResolver implements Resolve<[Course,(Lesson[])]> {
 
-    constructor(private coursesService: CoursesService) {
-
-    }
+    constructor(private coursesService: CoursesService) {}
 
 
     resolve(
@@ -21,8 +19,9 @@ export class CourseDetailResolver implements Resolve<[Course,(Lesson[])]> {
         state: RouterStateSnapshot): Observable<[Course, (Lesson[])]> {
 
         return this.coursesService.findCourseByUrl(route.params['id'])
-            .switchMap(course => this.coursesService.findLessonsForCourse(course.id),
-                (course, lessons) => <any>[course, lessons] );
+            .switchMap(
+                course => this.coursesService.findLessonsForCourse(course.id).map(lessons => <any>[course,lessons])
+            );
 
 
     }

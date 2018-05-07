@@ -41,7 +41,7 @@ export class CoursesService {
   }
 
   findLessonsForCourse(courseId:string): Observable<Lesson[]> {
-      return this.db.list('lessons', {
+      return <any>this.db.list('lessons', {
           query: {
               orderByChild: 'courseId',
               equalTo: courseId
