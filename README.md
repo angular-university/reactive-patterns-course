@@ -2,7 +2,7 @@
 
 This repository contains of the Angular University [RxJs and Reactive Patterns Angular Architecture Course](https://angular-university.io/course/reactive-angular-architecture-course).
 
-This course repository is updated to Angular v5, there is a Yarn lock file available.
+This course repository is updated to Angular v6, there is a Yarn lock file available.
 
 [RxJs and Reactive Patterns Angular Architecture Course](https://angular-university.io/course/reactive-angular-architecture-course)
 
@@ -12,7 +12,7 @@ This course repository is updated to Angular v5, there is a Yarn lock file avail
 
 This project has minimal dependencies, you only need node and npm installed on your machine.  These are some tutorials to install node in different operating systems.
 
-*Make sure to install the latest version of Node 6*
+*Make sure to install the latest version of Node*
 
 - [Install Node and NPM on Windows](https://www.youtube.com/watch?v=8ODS6RM6x7g)
 - [Install Node and NPM on Linux](https://www.youtube.com/watch?v=yUdHk-Dk_BY)
