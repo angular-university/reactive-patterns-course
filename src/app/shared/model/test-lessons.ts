@@ -1,7 +1,3 @@
-
-
-import {Lesson} from "./lesson";
-
 export const testLessons = [
     {
         id: 1,
