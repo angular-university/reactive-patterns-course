@@ -22,6 +22,8 @@ import { TopMenuComponent } from './top-menu/top-menu.component';
 import { LoginComponent } from './login/login.component';
 import {AngularFireDatabaseModule} from "angularfire2/database";
 import {AngularFireAuthModule} from "angularfire2/auth";
+import {UserService} from './services/user.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,7 @@ import {AngularFireAuthModule} from "angularfire2/auth";
     BrowserModule,
     FormsModule,
     HttpModule,
+    HttpClientModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
@@ -49,7 +52,8 @@ import {AngularFireAuthModule} from "angularfire2/auth";
   ],
   providers: [
       CoursesService,
-      NewsletterService
+      NewsletterService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

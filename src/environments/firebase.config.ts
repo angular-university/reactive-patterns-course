@@ -1,9 +1,8 @@
-
-
 export const firebaseConfig = {
-    apiKey: "AIzaSyA0BcUcu4V8aHT_gM-32BhRcmqji4z-lts",
-    authDomain: "final-project-recording.firebaseapp.com",
-    databaseURL: "https://final-project-recording.firebaseio.com",
-    storageBucket: "final-project-recording.appspot.com",
-    messagingSenderId: "290354329688"
+  apiKey: 'AIzaSyBNTsXrM1R5UrMPe1ozJ8_uv7_L5yBbcbQ',
+  authDomain: 'rxjs-pattern-fork.firebaseapp.com',
+  databaseURL: 'https://rxjs-pattern-fork.firebaseio.com',
+  projectId: 'rxjs-pattern-fork',
+  storageBucket: 'rxjs-pattern-fork.appspot.com',
+  messagingSenderId: '279192317756'
 };
