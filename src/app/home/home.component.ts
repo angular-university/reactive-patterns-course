@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {AngularFireDatabase} from 'angularfire2/database';
+import {AngularFireDatabase} from '@angular/fire/database';
 import {Course} from "../shared/model/course";
 import {Lesson} from "../shared/model/lesson";
 
@@ -21,17 +21,14 @@ export class HomeComponent implements OnInit {
     ngOnInit() {
 
         this.db.list('courses')
+            .valueChanges()
             .do(console.log)
             .subscribe(
                 data => this.courses = data
             );
 
-        this.db.list('lessons', {
-            query: {
-                orderByKey: true,
-                limitToLast: 10
-            }
-        })
+        this.db.list('lessons', ref => ref.orderByKey().limitToLast(10))
+            .valueChanges()
             .do(console.log)
             .subscribe(
                 data => this.latestLessons = data
