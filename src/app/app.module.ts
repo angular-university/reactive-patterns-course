@@ -8,7 +8,7 @@ import {EventBusExperimentsComponent} from './event-bus-experiments/event-bus-ex
 import {LessonsListComponent} from './lessons-list/lessons-list.component';
 import {LessonsCounterComponent} from './lessons-counter/lessons-counter.component';
 import {HomeComponent} from './home/home.component';
-import {AngularFireModule} from 'angularfire2';
+import {AngularFireModule} from '@angular/fire';
 import {RouterModule} from '@angular/router';
 import {routerConfig} from "./router.config";
 import {CourseDetailComponent} from './course-detail/course-detail.component';
@@ -31,7 +31,7 @@ import { CreateLessonComponent } from './create-lesson/create-lesson.component';
 import {CourseDetailResolver} from "./course-detail/course-detail.resolver";
 import { LoadingComponent } from './loading/loading.component';
 import {firebaseConfig} from "../environments/firebase.config";
-import {AngularFireDatabaseModule} from "angularfire2/database";
+import {AngularFireDatabaseModule} from "@angular/fire/database";
 
 
 @NgModule({
