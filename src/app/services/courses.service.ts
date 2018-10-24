@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import {AngularFireDatabase} from 'angularfire2/database';
+import {AngularFireDatabase} from "@angular/fire/database";
+import {Observable} from "rxjs/Observable";
 import {Course} from "../shared/model/course";
-import {Observable} from 'rxjs';
 import {Lesson} from "../shared/model/lesson";
+import {first, map} from 'rxjs/operators';
 
 @Injectable()
 export class CoursesService {
@@ -13,40 +14,40 @@ export class CoursesService {
 
   findAllCourses(): Observable<Course[]> {
       return this.db.list('courses')
+          .valueChanges()
           .first()
           .do(console.log);
   }
 
+
   findLatestLessons(): Observable<Lesson[]> {
-      return this.db.list('lessons', {
-          query: {
-              orderByKey: true,
-              limitToLast: 10
-          }
-      })
+    return this.db.list('lessons', ref => ref.orderByKey().limitToLast(10))
+      .valueChanges()
       .first()
       .do(console.log);
   }
 
   findCourseByUrl(courseUrl:string): Observable<Course> {
-      return this.db.list('courses', {
-          query: {
-              orderByChild: 'url',
-              equalTo: courseUrl
-          }
-      })
-      .map( data => data[0])
-      .first();
+      return this.db.list('courses', ref => ref.orderByChild('url').equalTo(courseUrl))
+      .snapshotChanges()
+      .pipe(
+        map( changes => {
 
+          const snap = changes[0];
+
+          return <Course> {
+            id:snap.payload.key,
+            ...snap.payload.val()
+          };
+
+        }),
+        first()
+      )
   }
 
   findLessonsForCourse(courseId:string): Observable<Lesson[]> {
-      return <any>this.db.list('lessons', {
-          query: {
-              orderByChild: 'courseId',
-              equalTo: courseId
-          }
-      })
+      return <any>this.db.list('lessons', ref => ref.orderByChild('courseId').equalTo(courseId))
+      .valueChanges()
       .first();
   }
 

@@ -9,7 +9,7 @@ import {LessonsListComponent} from './lessons-list/lessons-list.component';
 import {LessonsCounterComponent} from './lessons-counter/lessons-counter.component';
 import {HomeComponent} from './home/home.component';
 import {firebaseConfig} from "../environments/firebase.config";
-import {AngularFireModule} from 'angularfire2';
+import {AngularFireModule} from '@angular/fire';
 import {RouterModule} from '@angular/router';
 import {routerConfig} from "./router.config";
 import {CourseDetailComponent} from './course-detail/course-detail.component';
@@ -26,8 +26,8 @@ import {CourseComponent} from './course/course.component';
 import {LessonDetailComponent} from './lesson-detail/lesson-detail.component';
 import {CoursesHttpService} from "./services/courses-http.service";
 import {SafeUrlPipe} from "./shared/pipes/safe-url.pipe";
-import {AngularFireDatabaseModule} from "angularfire2/database";
-import {AngularFireAuthModule} from "angularfire2/auth";
+import {AngularFireDatabaseModule} from "@angular/fire/database";
+import {AngularFireAuthModule} from "@angular/fire/auth";
 
 
 @NgModule({
