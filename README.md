@@ -2,7 +2,7 @@
 
 This repository contains of the Angular University [RxJs and Reactive Patterns Angular Architecture Course](https://angular-university.io/course/reactive-angular-architecture-course).
 
-This course repository is updated to Angular v6, there is a Yarn lock file available.
+This course repository is updated to Angular v7, there is a Yarn lock file available.
 
 [RxJs and Reactive Patterns Angular Architecture Course](https://angular-university.io/course/reactive-angular-architecture-course)
 
