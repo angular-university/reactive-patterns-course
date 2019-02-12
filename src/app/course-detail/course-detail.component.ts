@@ -37,7 +37,15 @@ export class CourseDetailComponent implements OnInit {
                   };
 
                   this.db.list('lessons', ref => ref.orderByChild('courseId').equalTo(data.payload.key))
-                      .subscribe(lessons => this.lessons = lessons);
+                    .snapshotChanges()
+                      .subscribe(lessons => {
+                        this.lessons = lessons.map(data => {
+                          return <Lesson>{
+                            id: data.payload.key,
+                            ...data.payload.val()
+                          }
+                        });
+                      });
               });
 
           });
