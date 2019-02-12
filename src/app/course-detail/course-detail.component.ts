@@ -32,7 +32,7 @@ export class CourseDetailComponent implements OnInit {
               )
               .subscribe(data => {
                   this.course = <Course>{
-                    id: data.payload.key
+                    id: data.payload.key,
                     ...data.payload.val()
                   };
 
