@@ -1,3 +1,7 @@
+# THIS COURSE IS ARCHIVED
+
+This course has been archived and is now replaced by the [Reactive Angular Course](https://github.com/angular-university/reactive-angular-course).
+
 # Repository Content
 
 This repository contains of the Angular University [RxJs and Reactive Patterns Angular Architecture Course](https://angular-university.io/course/reactive-angular-architecture-course).
